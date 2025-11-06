@@ -10,8 +10,8 @@ import sanitizeHtml from 'sanitize-html';
 // import { XMLBuilder } from 'fast-xml-parser';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-// import { config } from './server/src/config/env.js';
-// import { logger } from './server/src/config/logger.js';
+import { config } from './server/src/config/env.js';
+import { logger } from './server/src/config/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config();
@@ -69,5 +69,5 @@ app.get('*root', (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`nebasjoa-blog API listening on :${port})`);
+  logger.info(`nebasjoa-blog API listening on :${config.port} (${config.env})`);
 });
