@@ -1,0 +1,49 @@
+:root {
+    --main-width: 992px;
+    --main-background: #ececec;
+    --sky-blue: #3FA9F5;
+    --charcoal: #2E2E2E;
+}
+
+* {
+    outline: none;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--charcoal);
+}
+
+@media (max-width: 480px){
+    #app {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #app {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    #app {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
