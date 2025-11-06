@@ -1,10 +1,12 @@
 <template>
+    <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
     <div class="post-info-wrapper">
         <div class="post-info-content">
             <div class="post-date">{{ post.date }}</div>
             <div class="post-title">{{ post.title }}</div>
         </div>
     </div>
+    </router-link>
 </template>
 
 <script>
@@ -24,6 +26,11 @@ export default {
 </script>
 
 <style scoped>
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
 .post-info-content {
     display: flex;
     width: 100%;

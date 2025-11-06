@@ -1,6 +1,7 @@
 <template>
     <div class="home-view-wrapper">
         <div class="home-view-content">
+            <h2>My Portfolio</h2>
             <div>1</div>
         </div>
     </div>

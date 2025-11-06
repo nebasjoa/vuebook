@@ -4,12 +4,14 @@
             "id": "a1",
             "date": "06.11.2025",
             "title": "Sladoled od cokolade",
+            "slug": "sladoled-od-cokolade",
             "content": "text 1"
         },
         {
             "id": "2",
             "date": "06.11.2025",
             "title": "Sladoled od cokolade",
+            "slug": "sladoled-od-cokolade",
             "content": "text 2"
         }
     ]
