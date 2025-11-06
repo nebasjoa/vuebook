@@ -5,8 +5,7 @@
             <div class="navbar-menu">
                 <ul>
                     <li><router-link to="/">home</router-link></li>
-                    <li>blog</li>
-                    <li>about</li>
+                    <li><router-link to="/blog">blog</router-link></li>
                     <li><router-link to="/cv">cv</router-link></li>
                 </ul>
             </div>

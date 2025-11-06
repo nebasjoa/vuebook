@@ -1,8 +1,9 @@
 :root {
-    --main-width: 992px;
+    --main-width: 768px;
     --main-background: #ececec;
     --sky-blue: #3FA9F5;
-    --charcoal: #2E2E2E;
+    --charcoal: #141414;
+    --cool-gray: #6B7280;
 }
 
 * {
@@ -35,13 +36,6 @@
 }
 
 @media (max-width: 768px) {
-    #app {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 992px) {
     #app {
         padding-left: 20px;
         padding-right: 20px;

@@ -21,6 +21,6 @@
     width: 100%;
     max-width: var(--main-width);
     margin: auto;
-    margin-top: 0;
+    margin-top: 40px;
 }
 </style>
