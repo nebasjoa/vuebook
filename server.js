@@ -33,7 +33,7 @@ const isProdOrStaging = process.env.NODE_ENV === 'production' || process.env.NOD
 //   port: isProdOrStaging ? process.env.DB_PORT : 10236
 // });
 
-const md = new MarkdownIt({ html: false, linkify: true, breaks: true });
+// const md = new MarkdownIt({ html: false, linkify: true, breaks: true });
 
 // Test database connection not needed for now
 // pool.getConnection()
