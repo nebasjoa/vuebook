@@ -26,7 +26,7 @@
     margin: auto;
     background-color: var(--charcoal);
     color: white;
-    min-height: 10vh;
+    height: 10vh;
 }
 
 .footer-content {

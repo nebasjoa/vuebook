@@ -23,7 +23,7 @@
     color: white;
     display: flex;
     margin: auto;
-    min-height: 5vh;
+    height: 5vh;
 }
 
 .navbar-content {
