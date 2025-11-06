@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import dotenv from 'dotenv'
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -14,6 +14,7 @@ import { config } from './server/src/config/env.js';
 import { logger } from './server/src/config/logger.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config();
 const app = express();
 
 app.use(helmet());
