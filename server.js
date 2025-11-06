@@ -69,5 +69,5 @@ app.get('*root', (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  logger.info(`nebasjoa-blog API listening on :${config.port} (${config.env})`);
+  console.log(`nebasjoa-blog API listening on :${port}`);
 });
