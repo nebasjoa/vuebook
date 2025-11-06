@@ -2,11 +2,11 @@ import dotenv from 'dotenv'
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import mysql from 'mysql2/promise';
+// import mysql from 'mysql2/promise';
 // import { createPool } from 'mariadb'
-import jwt from 'jsonwebtoken';
-import MarkdownIt from 'markdown-it';
-import sanitizeHtml from 'sanitize-html';
+// import jwt from 'jsonwebtoken';
+// import MarkdownIt from 'markdown-it';
+// import sanitizeHtml from 'sanitize-html';
 // import { XMLBuilder } from 'fast-xml-parser';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,14 +49,14 @@ const md = new MarkdownIt({ html: false, linkify: true, breaks: true });
 //     console.error("Unable to connect to MariaDB:", err)
 //   });
 
-const sanitize = (html) =>
-    sanitizeHtml(html, {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h1', 'h2', 'h3', 'pre', 'code']),
-        allowedAttributes: {
-            ...sanitizeHtml.defaults.allowedAttributes,
-            img: ['src', 'alt', 'title', 'loading', 'decoding']
-        }
-    });
+// const sanitize = (html) =>
+//     sanitizeHtml(html, {
+//         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h1', 'h2', 'h3', 'pre', 'code']),
+//         allowedAttributes: {
+//             ...sanitizeHtml.defaults.allowedAttributes,
+//             img: ['src', 'alt', 'title', 'loading', 'decoding']
+//         }
+//     });
 
 // ---------- Health ----------
 app.get('/healthz', (req, res) => res.json({ ok: true }));
