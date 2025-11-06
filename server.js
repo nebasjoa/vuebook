@@ -25,29 +25,29 @@ app.use(express.static('dist')); // or your frontend path
 
 const isProdOrStaging = process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging';
 
-const pool = mysql.createPool({
-  host: isProdOrStaging ? process.env.DB_HOST : 'switchback.proxy.rlwy.net',
-  user: isProdOrStaging ? process.env.DB_USER : 'root',
-  password: isProdOrStaging ? process.env.DB_PASSWORD : 'IxKdGZxqcyhIGFkwgBHdNGFarKPqYEvS',
-  database: isProdOrStaging ? process.env.DB_DATABASE : 'nebasjoa-blog',
-  port: isProdOrStaging ? process.env.DB_PORT : 10236
-});
+// const pool = mysql.createPool({
+//   host: isProdOrStaging ? process.env.DB_HOST : 'switchback.proxy.rlwy.net',
+//   user: isProdOrStaging ? process.env.DB_USER : 'root',
+//   password: isProdOrStaging ? process.env.DB_PASSWORD : 'IxKdGZxqcyhIGFkwgBHdNGFarKPqYEvS',
+//   database: isProdOrStaging ? process.env.DB_DATABASE : 'nebasjoa-blog',
+//   port: isProdOrStaging ? process.env.DB_PORT : 10236
+// });
 
 const md = new MarkdownIt({ html: false, linkify: true, breaks: true });
 
-// Test database connection
-pool.getConnection()
-  .then(conn => {
-    const isProdLike = ['production', 'staging'].includes(process.env.NODE_ENV);
-    console.log(
-      new Date().toLocaleString('de-DE') +
-      (isProdLike ? ": Connected to Carvestigate production database." : ": Connected to MariaDB on TEST DB!")
-    );
-    conn.release();
-  })
-  .catch(err => {
-    console.error("Unable to connect to MariaDB:", err)
-  });
+// Test database connection not needed for now
+// pool.getConnection()
+//   .then(conn => {
+//     const isProdLike = ['production', 'staging'].includes(process.env.NODE_ENV);
+//     console.log(
+//       new Date().toLocaleString('de-DE') +
+//       (isProdLike ? ": Connected to Carvestigate production database." : ": Connected to MariaDB on TEST DB!")
+//     );
+//     conn.release();
+//   })
+//   .catch(err => {
+//     console.error("Unable to connect to MariaDB:", err)
+//   });
 
 const sanitize = (html) =>
     sanitizeHtml(html, {

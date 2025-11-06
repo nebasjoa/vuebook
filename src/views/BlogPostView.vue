@@ -3,10 +3,8 @@
         <div class="blog-post-view-content">
             <section class="" v-if="post">
                 <h2>{{ post.title }}</h2>
-                <small>{{ post.date }}</small>
-                <article class="prose">
-                    <p>{{ post.content }}</p>
-                </article>
+                <p class="post-date">{{ post.date }}</p>
+                <div v-html="renderedContent" class="prose"></div>
             </section>
 
             <section v-else>
@@ -20,6 +18,7 @@
 
 <script>
 import postsJson from '@/assets/files/posts.json';
+import { marked } from 'marked';
 
 export default {
     name: 'BlogPostView',
@@ -31,6 +30,11 @@ export default {
     },
     watch: {
         '$route.params.slug': 'loadPost'
+    },
+    computed: {
+        renderedContent() {
+            return this.post ? marked(this.post.content) : '';
+        }
     },
     methods: {
         loadPost() {
@@ -66,5 +70,14 @@ export default {
     max-width: var(--main-width);
     margin: auto;
     margin-top: 40px;
+}
+
+.post-date {
+    color: var(--cool-gray);
+    margin-top: 10px;
+}
+
+.prose {
+    margin-top: 30px;
 }
 </style>
