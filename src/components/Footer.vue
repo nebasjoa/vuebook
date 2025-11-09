@@ -3,7 +3,7 @@
         <div class="footer-content">
             <div class="footer-subgroup">
                 <h3>nebasjoa</h3>
-                <p>2025 nebasjoa</p>
+                <p>&copy; 2025 nebasjoa</p>
             </div>
             <div class="footer-subgroup">
                 <h3>Socials</h3>

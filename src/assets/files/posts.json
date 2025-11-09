@@ -1,25 +1,11 @@
 {
   "posts": [
     {
-      "id": "a1",
-      "title": "Sladoled od cokolade",
+      "id": "1",
+      "title": "",
       "slug": "sladoled-od-cokolade",
       "date": "06.11.2025",
       "content": "Ovo je **najbolji** sladoled.\n\n- mleko\n- šećer\n- kakao\n"
-    },
-    {
-      "id": "2",
-      "date": "06.11.2025",
-      "title": "Sladoled od jagode",
-      "slug": "sladoled-od-jagode",
-      "content": "text 2"
-    },
-    {
-      "id": "3",
-      "date": "06.11.2025",
-      "title": "Sladoled od vanile",
-      "slug": "sladoled-od-vanile",
-      "content": "text 3"
     }
   ]
 }
