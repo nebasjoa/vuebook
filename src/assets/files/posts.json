@@ -2,9 +2,10 @@
   "posts": [
     {
       "id": "1",
-      "title": "",
+      "title": "Post #1",
       "slug": "sladoled-od-cokolade",
       "date": "06.11.2025",
+      "category": "Fotografija, Putovanja",
       "content": "Ovo je **najbolji** sladoled.\n\n- mleko\n- šećer\n- kakao\n"
     }
   ]

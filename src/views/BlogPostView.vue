@@ -3,7 +3,7 @@
         <div class="blog-post-view-content">
             <section class="" v-if="post">
                 <h2>{{ post.title }}</h2>
-                <p class="post-date">{{ post.date }}</p>
+                <p class="post-date">{{ post.date }} | kategorije: {{ post.category }}</p>
                 <div v-html="renderedContent" class="prose"></div>
             </section>
 
@@ -52,7 +52,13 @@ export default {
                 return new Date(`${yyyy}-${mm}-${dd}T00:00:00`);
             };
             this.post = matching.sort((a, b) => toDate(b.date) - toDate(a.date))[0];
-        }
+        },
+        // parseCategories(categories) {
+        //     category_array = categories.split(',')
+        //     for (category in category_array) {
+
+        //     }
+        // }
     }
 };
 </script>
