@@ -36,3 +36,41 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Strapi (Railway) Integration
+
+This project can now load blog posts from a Strapi API through the local `Express` server proxy (`/api/posts`), so your Strapi token stays on the server.
+
+### 1. Add environment variables
+
+Add these to your `.env` (and Railway service envs for this app if deployed):
+
+```env
+STRAPI_BASE_URL=https://your-strapi-app.up.railway.app
+STRAPI_API_TOKEN=your_strapi_api_token
+STRAPI_COLLECTION=posts
+```
+
+Notes:
+- `STRAPI_COLLECTION` should match your Strapi collection type API ID (default is `posts`).
+- `STRAPI_API_TOKEN` can be omitted only if your Strapi `Public` role is allowed to read posts.
+
+### 2. Expected Strapi fields (collection: `posts`)
+
+The app maps Strapi entries into the current UI shape. Recommended fields in Strapi:
+
+- `title` (Text)
+- `slug` (UID or Text)
+- `content` (Rich text / Markdown-capable text)
+- `date` (Date) optional, otherwise `publishedAt` is used
+- `category` (Text) or `categories` relation (optional)
+
+### 3. Run with the proxy enabled
+
+The Vue dev server (`npm run dev`) does not start the Express proxy. To test the full integration locally, use:
+
+```sh
+npm start
+```
+
+That builds the frontend and starts `server.js`, which serves the app and proxies requests to Strapi.

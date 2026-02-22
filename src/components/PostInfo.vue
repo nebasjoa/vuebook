@@ -2,8 +2,10 @@
     <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
     <div class="post-info-wrapper">
         <div class="post-info-content">
-            <div class="post-date">{{ post.date }}</div>
-            <div class="post-title">{{ post.title }}</div>
+            <span v-if="post.date" class="post-date">{{ post.date }}</span>
+            <span class="post-title">{{ post.title }}</span>
+            <span v-if="post.category" class="post-meta">{{ post.category }}</span>
+            <span v-if="post.author" class="post-meta">{{ post.author }}</span>
         </div>
     </div>
     </router-link>
@@ -29,7 +31,9 @@ a {
 .post-info-content {
     display: flex;
     width: 100%;
-    gap: 20px;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .post-info-wrapper {
@@ -37,6 +41,15 @@ a {
 }
 
 .post-date {
+    color: var(--cool-gray);
+}
+
+.post-title {
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.post-meta {
     color: var(--cool-gray);
 }
 </style>

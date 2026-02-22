@@ -3,15 +3,16 @@
         <div class="home-view-content">
             <h2>My Portfolio</h2>
             <div class="home-view-section">
-                <p>
-                    Pošto sam ja organizator ovoga skuuupa, predajem reč drugu Bobanu. Prosto možete da čujete ovaj
-                    video, zar ne.
-                </p>
+                <p>Latest writing from the blog, managed in Strapi and rendered here.</p>
             </div>
+
+            <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+
             <div class="post-list-wrapper">
                 <div class="post-list" v-for="post in posts" :key="post.id">
                     <PostInfo :post="post" />
                 </div>
+                <p v-if="!isLoading && posts.length === 0">No posts yet.</p>
             </div>
         </div>
     </div>
@@ -19,18 +20,32 @@
 
 <script>
 import PostInfo from '@/components/PostInfo.vue';
-import posts from '@/assets/files/posts.json'
+import { fetchPosts } from '@/services/blogApi.js';
 
 export default {
     data() {
         return {
-            posts: posts.posts
+            posts: [],
+            isLoading: false,
+            errorMessage: ''
+        };
+    },
+    async created() {
+        this.isLoading = true;
+        this.errorMessage = '';
+        try {
+            this.posts = await fetchPosts(3);
+        } catch (error) {
+            this.posts = [];
+            this.errorMessage = error.message || 'Failed to load posts.';
+        } finally {
+            this.isLoading = false;
         }
     },
     components: {
         PostInfo
     }
-}
+};
 </script>
 
 <style scoped>
@@ -56,7 +71,12 @@ export default {
 .post-list-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin-top: 30px;
+}
+
+.error-message {
+    color: #ffb0b0;
+    margin-top: 10px;
 }
 </style>
